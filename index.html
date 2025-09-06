@@ -6,8 +6,89 @@
   <title>Letters from Vikrant ✉️</title>
   <meta name="description" content="Type a name and receive a personalized letter from Vikrant. Edit friendsData in the JS to add new friends or use the Add Friend form."/>
   <style>
+    const defaultFriends = [
+  {
+    name: "Nancy",
+    birthday: "March 3",
+    favoriteColor: "Pink",
+    hobbies: ["painting", "music", "storytelling"],
+    letter: "Dear Nancy,\n\nTumhari muskaan har jagah roshni bhar deti hai. Tumhari kalpana aur pyaar bhare shabd mujhe hamesha inspire karte hain. Tum meri duniya ka ek rangin hissa ho.\n\nPyar ke saath,\nVikrant"
+  },
+  {
+    name: "Mantu",
+    birthday: "July 9",
+    favoriteColor: "Black",
+    hobbies: ["cricket", "coding"],
+    letter: "Hey Mantu,\n\nHamare cricket ke matches aur coding ke lamhe mujhe hamesha yaad rehte hain. Tumhari mehnat aur masti dono lajawab hain. Hamesha aise hi baney raho.\n\nYours,\nVikrant"
+  },
+  {
+    name: "Deep",
+    birthday: "October 2",
+    favoriteColor: "Red",
+    hobbies: ["photography", "travel"],
+    letter: "Dear Deep,\n\nTumhare camera se li gayi tasveerein hamesha dil ko chhoo jaati hain. Safar aur yaadein tumhe aur bhi khaas banati hain. Har nayi tasveer mein ek kahani hoti hai.\n\nBest,\nVikrant"
+  },
+  {
+    name: "Ekta",
+    birthday: "December 12",
+    favoriteColor: "Purple",
+    hobbies: ["debate", "reading"],
+    letter: "Dear Ekta,\n\nTumhari baatein aur tumhari soch hamesha dil ko choo jaati hai. Tumhari debates aur tumhara pyaar ek alag hi chamak rakhte hain. Tum meri dost ho, is baat par mujhe fakhr hai.\n\nAlways,\nVikrant"
+  },
+  {
+    name: "Chhavi",
+    birthday: "August 15",
+    favoriteColor: "Yellow",
+    hobbies: ["dancing", "fun pranks"],
+    letter: "Dear Chhavi,\n\nTumhari shararat aur tumhari hasi ghar ko hamesha zinda dil banati hai. Kabhi kabhi tum irritate karti ho, par asli baat ye hai ki tum meri sabse khaas behen ho.\n\nLove,\nVikrant"
+  },
+  {
+    name: "Rishabh",
+    birthday: "April 10",
+    favoriteColor: "Blue",
+    hobbies: ["football", "gaming"],
+    letter: "Yo Rishabh,\n\nTu ground pe ho to energy hi alag level pe hoti hai! Football ke moves aur tera gaming style — dono hi trend bana dete hain. Tu jaha hota hai, wahin masti aur dhamaka hota hai.\n\nCheers bro,\nVikrant"
+  },
+  {
+    name: "Ranjan",
+    birthday: "May 21",
+    favoriteColor: "Green",
+    hobbies: ["fitness", "motivation"],
+    letter: "Dear Ranjan,\n\nTere dedication ne hamesha inspire kiya hai. Tu trend banane wala banda hai — gym, fitness aur motivation ki vibe lekar aata hai. Tere sath baithna matlab confidence level automatic boost ho jata hai.\n\nRespect,\nVikrant"
+  },
+  {
+    name: "Bhavesh",
+    birthday: "September 5",
+    favoriteColor: "Orange",
+    hobbies: ["travel", "adventure"],
+    letter: "Bro Bhavesh,\n\nTumhare safar aur tumhari kahaniyaan ekdum reel-worthy hoti hain! Har trip tum Instagram trend bana dete ho. Tera adventurous nature sabko attract karta hai.\n\nStay wild,\nVikrant"
+  },
+  {
+    name: "Anshu",
+    birthday: "November 11",
+    favoriteColor: "Black",
+    hobbies: ["music", "chill vibes"],
+    letter: "Anshu bhai,\n\nTere playlist ke bina to koi party complete hi nahi hoti. Tu vibe creator hai — dosti aur beats dono ke sath. Tumhare jokes aur songs dono hi trending material hain.\n\nWith beats,\nVikrant"
+  },
+  {
+    name: "Satyam",
+    birthday: "June 7",
+    favoriteColor: "Red",
+    hobbies: ["cricket", "tech"],
+    letter: "Satyam,\n\nTu cricket ground pe king aur tech talks me guru hai. Trend ho ya update, tu hamesha sabse pehle hota hai. Tere bina group ki baat hi adhuri lagti hai.\n\nAlways proud,\nVikrant"
+  },
+  {
+    name: "Maaz",
+    birthday: "February 18",
+    favoriteColor: "White",
+    hobbies: ["fashion", "social media"],
+    letter: "Yo Maaz,\n\nTera fashion sense aur insta stories hamesha viral mood dete hain. Tu asli trendsetter hai hamari gang ka. Har jagah tumhara style hi alag chamak deta hai.\n\nShine on,\nVikrant"
+  }
+];
+    
+    
     /* ----------------------
-       EASY EDIT SECTION
+      EAY EDIT SECTION
        To add new friends: edit the friendsData array in the <script> below OR use the Add Friend form in the app.
        Each friend object:
        {
