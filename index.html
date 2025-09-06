@@ -4,408 +4,112 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Letters from Vikrant ✉️</title>
-  <meta name="description" content="Type a name and receive a personalized letter from Vikrant. Edit friendsData in the JS to add new friends or use the Add Friend form."/>
   <style>
-    const defaultFriends = [
-  {
-    name: "Nancy",
-    birthday: "March 3",
-    favoriteColor: "Pink",
-    hobbies: ["painting", "music", "storytelling"],
-    letter: "Dear Nancy,\n\nTumhari muskaan har jagah roshni bhar deti hai. Tumhari kalpana aur pyaar bhare shabd mujhe hamesha inspire karte hain. Tum meri duniya ka ek rangin hissa ho.\n\nPyar ke saath,\nVikrant"
-  },
-  {
-    name: "Mantu",
-    birthday: "July 9",
-    favoriteColor: "Black",
-    hobbies: ["cricket", "coding"],
-    letter: "Hey Mantu,\n\nHamare cricket ke matches aur coding ke lamhe mujhe hamesha yaad rehte hain. Tumhari mehnat aur masti dono lajawab hain. Hamesha aise hi baney raho.\n\nYours,\nVikrant"
-  },
-  {
-    name: "Deep",
-    birthday: "October 2",
-    favoriteColor: "Red",
-    hobbies: ["photography", "travel"],
-    letter: "Dear Deep,\n\nTumhare camera se li gayi tasveerein hamesha dil ko chhoo jaati hain. Safar aur yaadein tumhe aur bhi khaas banati hain. Har nayi tasveer mein ek kahani hoti hai.\n\nBest,\nVikrant"
-  },
-  {
-    name: "Ekta",
-    birthday: "December 12",
-    favoriteColor: "Purple",
-    hobbies: ["debate", "reading"],
-    letter: "Dear Ekta,\n\nTumhari baatein aur tumhari soch hamesha dil ko choo jaati hai. Tumhari debates aur tumhara pyaar ek alag hi chamak rakhte hain. Tum meri dost ho, is baat par mujhe fakhr hai.\n\nAlways,\nVikrant"
-  },
-  {
-    name: "Chhavi",
-    birthday: "August 15",
-    favoriteColor: "Yellow",
-    hobbies: ["dancing", "fun pranks"],
-    letter: "Dear Chhavi,\n\nTumhari shararat aur tumhari hasi ghar ko hamesha zinda dil banati hai. Kabhi kabhi tum irritate karti ho, par asli baat ye hai ki tum meri sabse khaas behen ho.\n\nLove,\nVikrant"
-  },
-  {
-    name: "Rishabh",
-    birthday: "April 10",
-    favoriteColor: "Blue",
-    hobbies: ["football", "gaming"],
-    letter: "Yo Rishabh,\n\nTu ground pe ho to energy hi alag level pe hoti hai! Football ke moves aur tera gaming style — dono hi trend bana dete hain. Tu jaha hota hai, wahin masti aur dhamaka hota hai.\n\nCheers bro,\nVikrant"
-  },
-  {
-    name: "Ranjan",
-    birthday: "May 21",
-    favoriteColor: "Green",
-    hobbies: ["fitness", "motivation"],
-    letter: "Dear Ranjan,\n\nTere dedication ne hamesha inspire kiya hai. Tu trend banane wala banda hai — gym, fitness aur motivation ki vibe lekar aata hai. Tere sath baithna matlab confidence level automatic boost ho jata hai.\n\nRespect,\nVikrant"
-  },
-  {
-    name: "Bhavesh",
-    birthday: "September 5",
-    favoriteColor: "Orange",
-    hobbies: ["travel", "adventure"],
-    letter: "Bro Bhavesh,\n\nTumhare safar aur tumhari kahaniyaan ekdum reel-worthy hoti hain! Har trip tum Instagram trend bana dete ho. Tera adventurous nature sabko attract karta hai.\n\nStay wild,\nVikrant"
-  },
-  {
-    name: "Anshu",
-    birthday: "November 11",
-    favoriteColor: "Black",
-    hobbies: ["music", "chill vibes"],
-    letter: "Anshu bhai,\n\nTere playlist ke bina to koi party complete hi nahi hoti. Tu vibe creator hai — dosti aur beats dono ke sath. Tumhare jokes aur songs dono hi trending material hain.\n\nWith beats,\nVikrant"
-  },
-  {
-    name: "Satyam",
-    birthday: "June 7",
-    favoriteColor: "Red",
-    hobbies: ["cricket", "tech"],
-    letter: "Satyam,\n\nTu cricket ground pe king aur tech talks me guru hai. Trend ho ya update, tu hamesha sabse pehle hota hai. Tere bina group ki baat hi adhuri lagti hai.\n\nAlways proud,\nVikrant"
-  },
-  {
-    name: "Maaz",
-    birthday: "February 18",
-    favoriteColor: "White",
-    hobbies: ["fashion", "social media"],
-    letter: "Yo Maaz,\n\nTera fashion sense aur insta stories hamesha viral mood dete hain. Tu asli trendsetter hai hamari gang ka. Har jagah tumhara style hi alag chamak deta hai.\n\nShine on,\nVikrant"
-  }
-];
-    
-    
-    /* ----------------------
-      EAY EDIT SECTION
-       To add new friends: edit the friendsData array in the <script> below OR use the Add Friend form in the app.
-       Each friend object:
-       {
-         name: "Full Name",
-         birthday: "January 15",
-         favoriteColor: "Blue",
-         hobbies: ["reading", "gardening"],
-         letter: "Optional custom letter text (can contain \n for new lines)."
-       }
-       ---------------------- */
-
-    /* Reset */
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body,#app{height:100%}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;display:flex;align-items:center;justify-content:center;padding:32px}
-
-    /* Royal gradient background with soft animated lights */
     body{
-      background: linear-gradient(135deg,#19165b 0%, #3b2a72 25%, #6b3fa0 60%, #8b5cd6 100%);
-      color:#f6f7fb;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      overflow:auto;
+      font-family:Inter,system-ui,Arial;
+      background: linear-gradient(135deg,#19165b,#6b3fa0,#8b5cd6);
+      min-height:100vh;display:flex;align-items:center;justify-content:center;
+      padding:30px;color:#f6f7fb;
     }
-
-    .bg-animate{
-      position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:overlay;opacity:0.18;
-      background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.06), transparent 8%),
-                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.04), transparent 10%),
-                        radial-gradient(circle at 50% 40%, rgba(255,255,255,0.03), transparent 12%);
-      animation: float 20s ease-in-out infinite;
-      filter: blur(18px);
-    }
-    @keyframes float{0%{transform:translateY(0) scale(.98)}50%{transform:translateY(-30px) scale(1.02)}100%{transform:translateY(0) scale(.98)}}
-
-    /* Container */
-    .container{position:relative;z-index:1;width:100%;max-width:980px;margin:auto}
-    .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#fff6,#ffd6);display:flex;align-items:center;justify-content:center;color:#2b0a54;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.25)}
-    h1{font-size:22px;letter-spacing:0.2px}
-    p.lead{color:rgba(246,247,251,0.85);margin-top:4px;font-size:13px}
-
-    /* Card layout */
-    .grid{display:grid;grid-template-columns:1fr 420px;gap:22px}
-    @media (max-width:980px){.grid{grid-template-columns:1fr} .header{flex-direction:column;align-items:flex-start}}
-
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border-radius:16px;padding:20px;box-shadow:0 6px 28px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
-
-    /* Input */
-    .searchRow{display:flex;gap:12px;align-items:center}
-    input[type=text]{flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:inherit;font-size:15px}
-    button.primary{background:linear-gradient(90deg,#8b5cd6,#6b3fa0);border:none;padding:10px 14px;border-radius:10px;color:white;font-weight:600;cursor:pointer}
-    button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer}
-
-    /* Friends list */
-    .friendsList{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
-    .friendChip{background:rgba(255,255,255,0.04);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;font-size:13px}
-
-    /* Envelope / Letter styling */
-    .envelope{margin-top:18px;padding:22px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);position:relative;overflow:hidden}
-    .envelope::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,0.02), transparent 35%);pointer-events:none}
-    .stamp{position:absolute;right:18px;top:18px;background:linear-gradient(90deg,#fff0,#ffd);padding:8px;border-radius:8px;color:#3b2a72;font-weight:700;font-size:12px}
-
-    .letter{background:rgba(255,255,255,0.98);color:#121212;padding:20px;border-radius:12px;max-height:420px;overflow:auto;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
-    .letter h2{font-size:18px;margin-bottom:8px}
-    .letter p{line-height:1.5;margin-bottom:10px}
-    .signature{margin-top:12px;font-weight:700}
-
-    /* Small form for adding friends */
-    .miniForm{display:grid;gap:8px;margin-top:12px}
-    .miniForm input, .miniForm textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
-    .row{display:flex;gap:8px}
-
-    /* footer */
-    .footer{margin-top:14px;font-size:12px;color:rgba(246,247,251,0.7)}
-
-    /* subtle entrance */
-    .panel{transform-origin:center;animation:pop .6s cubic-bezier(.2,.9,.3,1)}
-    @keyframes pop{0%{opacity:0;transform:translateY(12px) scale(.995)}100%{opacity:1;transform:none}}
-
-    /* tiny helper */
-    .muted{color:rgba(246,247,251,0.65);font-size:13px}
+    .container{max-width:800px;width:100%}
+    .panel{background:rgba(255,255,255,0.08);padding:20px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,0.4)}
+    h1{text-align:center;margin-bottom:15px}
+    input,textarea{width:100%;margin:6px 0;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff}
+    button{padding:10px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:600}
+    .primary{background:#6b3fa0;color:#fff}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff}
+    .letterBox{margin-top:20px;padding:20px;background:#fff;color:#121;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+    .letterBox h2{margin-bottom:8px}
+    .signature{margin-top:10px;font-weight:700}
   </style>
 </head>
 <body>
-  <div class="bg-animate" aria-hidden></div>
-  <div class="container" id="app">
-    <div class="header">
-      <div class="brand">
-        <div class="logo">VK</div>
-        <div>
-          <h1>Letters from Vikrant</h1>
-          <p class="lead">Type a name — get a warm, personal letter written in Vikrant's voice. ✉️</p>
-        </div>
+<div class="container">
+  <div class="panel">
+    <h1>💌 Letters from Vikrant</h1>
+
+    <!-- Search -->
+    <input id="nameInput" type="text" placeholder="Type your name..." />
+    <button class="primary" id="searchBtn">Find Letter</button>
+    <button class="ghost" id="clearBtn">Clear</button>
+
+    <!-- Result -->
+    <div id="output" class="letterBox" style="display:none"></div>
+
+    <!-- Add / Edit -->
+    <h3 style="margin-top:20px">Add or Update Your Info</h3>
+    <form id="addForm">
+      <input id="fName" placeholder="Full name" required />
+      <input id="fBirthday" placeholder="Birthday (e.g. Aug 28)" />
+      <input id="fColor" placeholder="Favorite color" />
+      <input id="fHobbies" placeholder="Hobbies (comma separated)" />
+      <textarea id="fLetter" rows="4" placeholder="Custom letter (optional)"></textarea>
+      <div style="margin-top:10px;display:flex;gap:10px">
+        <button type="submit" class="primary">Save</button>
+        <button type="button" id="resetBtn" class="ghost">Reset</button>
       </div>
-      <div class="muted">No backend — all local. Edit friends in the code or add new ones below.</div>
-    </div>
-
-    <div class="grid">
-      <div class="panel">
-        <div class="searchRow">
-          <input id="nameInput" type="text" placeholder="Type a friend's name and press Enter" />
-          <button class="primary" id="searchBtn">Find Letter</button>
-          <button class="ghost" id="clearBtn">Clear</button>
-        </div>
-
-        <div class="friendsList" id="friendsList" aria-live="polite"></div>
-
-        <div class="envelope" id="envelopeArea">
-          <div class="stamp">From Vikrant</div>
-          <div id="output" class="letter" role="region" aria-label="Generated letter">
-            <h2>Hello there —</h2>
-            <p class="muted">Type a name and your letter will appear here in an envelope-like card. You can also click a friend chip to preview their letter.</p>
-          </div>
-        </div>
-
-        <div class="footer">Tip: names are checked case-insensitively. Use the add form to save new friends to localStorage.</div>
-      </div>
-
-      <aside class="panel">
-        <h3 style="margin-bottom:8px">Add a friend (quick)</h3>
-        <form id="addForm" class="miniForm">
-          <input id="fName" placeholder="Full name" required />
-          <input id="fBirthday" placeholder="Birthday (e.g. Aug 28)" />
-          <input id="fColor" placeholder="Favorite color" />
-          <input id="fHobbies" placeholder="Hobbies (comma separated)" />
-          <textarea id="fLetter" rows="4" placeholder="Optional custom letter (\n for new lines)"></textarea>
-          <div class="row">
-            <button type="submit" class="primary">Add & Save</button>
-            <button type="button" id="resetStorage" class="ghost">Reset Saved</button>
-          </div>
-        </form>
-
-        <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.04)" />
-        <h4 style="margin-bottom:8px">Quick sample friends</h4>
-        <p class="muted">Click any chip to preview its letter.</p>
-        <div style="margin-top:10px" id="sampleNotes" class="muted"></div>
-      </aside>
-    </div>
+    </form>
   </div>
+</div>
 
-  <script>
-    // --------------------------
-    // friendsData: edit here or use the Add Friend form in the app
-    // --------------------------
-    const defaultFriends = [
-      {
-        name: "Alice",
-        birthday: "January 15",
-        favoriteColor: "Blue",
-        hobbies: ["reading","gardening"],
-        letter: "Dearest Alice,\n\nEvery time I think of your laugh, the room brightens. I'm so grateful for the little moments we share — the chai breaks, the whispered plans, and the dreams that feel possible when we're together. Keep smiling, keep daring.\n\nAlways,\nVikrant"
-      },
-      {
-        name: "Nancy",
-        birthday: "March 3",
-        favoriteColor: "Green",
-        hobbies: ["painting","music"],
-        letter: "Dear Nancy,\n\nI hope this note finds you with paint on your fingers and a song in your heart. You make the ordinary feel like a canvas; never stop creating.\n\nWarmly,\nVikrant"
-      },
-      {
-        name: "Mantu",
-        birthday: "July 9",
-        favoriteColor: "Black",
-        hobbies: ["cricket","coding"],
-        letter: "Hey Mantu,\n\nRemember when we stayed up all night debugging? Those small battles shaped us more than any trophy could. I'm proud of you.\n\nYours,\nVikrant"
-      },
-      {
-        name: "Deep",
-        birthday: "October 2",
-        favoriteColor: "Red",
-        hobbies: ["photography","travel"],
-        letter: "Dear Deep,\n\nEvery photo you take tells a story — and I'm honoured to be a character in so many of them. Keep chasing horizons.\n\nBest,\nVikrant"
-      },
-      {
-        name: "Ekta",
-        birthday: "December 12",
-        favoriteColor: "Purple",
-        hobbies: ["debate","reading"],
-        letter: "Ekta,\n\nYour words have weight; your kindness has reach. Thank you for arguing with me and then making me tea.\n\nAlways,\nVikrant"
-      }
-    ];
+<script>
+const storageKey = "letters_from_vikrant_v2";
+const defaultFriends = [
+  { name:"Nancy",birthday:"March 3",favoriteColor:"Pink",hobbies:["painting","music"],letter:"Dear Nancy,\n\nTumhari muskaan har jagah roshni bhar deti hai.\n\nPyar ke saath,\nVikrant"},
+  { name:"Mantu",birthday:"July 9",favoriteColor:"Black",hobbies:["cricket","coding"],letter:"Hey Mantu,\n\nHamare cricket ke matches aur coding ke lamhe mujhe hamesha yaad rehte hain.\n\nYours,\nVikrant"},
+  { name:"Deep",birthday:"Oct 2",favoriteColor:"Red",hobbies:["photography","travel"],letter:"Dear Deep,\n\nTumhare camera se li gayi tasveerein hamesha dil ko chhoo jaati hain.\n\nBest,\nVikrant"},
+  { name:"Ekta",birthday:"Dec 12",favoriteColor:"Purple",hobbies:["debate","reading"],letter:"Dear Ekta,\n\nTumhari soch aur pyaar ek alag hi chamak rakhte hain.\n\nAlways,\nVikrant"},
+  { name:"Chhavi",birthday:"Aug 15",favoriteColor:"Yellow",hobbies:["dancing"],letter:"Dear Chhavi,\n\nTumhari shararat aur tumhari hasi ghar ko hamesha zinda dil banati hai.\n\nLove,\nVikrant"},
+  { name:"Rishabh",birthday:"Apr 10",favoriteColor:"Blue",hobbies:["football","gaming"],letter:"Yo Rishabh,\n\nTu ground pe ho to energy hi alag level pe hoti hai!\n\nCheers bro,\nVikrant"}
+];
 
-    // load saved friends from localStorage (if any), otherwise use defaults
-    const storageKey = 'letters_from_vikrant_friends_v1';
-    let friendsData = [];
-    try {
-      const raw = localStorage.getItem(storageKey);
-      if (raw){
-        friendsData = JSON.parse(raw);
-      } else {
-        friendsData = defaultFriends.slice();
-        localStorage.setItem(storageKey, JSON.stringify(friendsData));
-      }
-    } catch (e){
-      console.warn('Could not access localStorage, using defaults.');
-      friendsData = defaultFriends.slice();
-    }
+let friendsData = JSON.parse(localStorage.getItem(storageKey) || "null") || defaultFriends.slice();
 
-    // UI elements
-    const nameInput = document.getElementById('nameInput');
-    const searchBtn = document.getElementById('searchBtn');
-    const clearBtn = document.getElementById('clearBtn');
-    const friendsList = document.getElementById('friendsList');
-    const output = document.getElementById('output');
-    const sampleNotes = document.getElementById('sampleNotes');
+function normalize(s){return (s||"").trim().toLowerCase()}
+function save(){localStorage.setItem(storageKey,JSON.stringify(friendsData))}
+function findFriend(name){return friendsData.find(f=>normalize(f.name)===normalize(name))}
 
-    function renderFriendChips(){
-      friendsList.innerHTML = '';
-      friendsData.forEach(f => {
-        const chip = document.createElement('button');
-        chip.className = 'friendChip';
-        chip.textContent = f.name;
-        chip.title = `${f.name} — Birthday: ${f.birthday || '—'}`;
-        chip.addEventListener('click', ()=> showLetterForName(f.name));
-        friendsList.appendChild(chip);
-      });
-      sampleNotes.textContent = `Currently saved: ${friendsData.length} friend(s). You can edit the list directly in code if you prefer.`
-    }
+function showLetter(name){
+  const f = findFriend(name);
+  const out = document.getElementById("output");
+  if(!f){
+    out.style.display="block";
+    out.innerHTML=`<h2>Sorry, ${name}</h2><p>I don’t have a letter for you yet. Add your info below!</p>`;
+    return;
+  }
+  const letter = f.letter || `Hello ${f.name},\n\nI still remember your birthday on ${f.birthday}. Your love for ${(f.hobbies||[]).join(", ")} and your bright ${f.favoriteColor} vibe inspire me.\n\nWith warmth,\nVikrant`;
+  out.style.display="block";
+  out.innerHTML=`<h2>To ${f.name},</h2>`+letter.split("\n").map(l=>`<p>${l}</p>`).join("")+`<div class="signature">— Vikrant</div>`;
+}
 
-    function normalizeName(s){
-      return (s||'').trim().toLowerCase();
-    }
+document.getElementById("searchBtn").onclick=()=>showLetter(document.getElementById("nameInput").value);
+document.getElementById("clearBtn").onclick=()=>{document.getElementById("nameInput").value="";document.getElementById("output").style.display="none"};
 
-    function findFriendByName(name){
-      const norm = normalizeName(name);
-      return friendsData.find(f => normalizeName(f.name) === norm);
-    }
+document.getElementById("addForm").onsubmit=(e)=>{
+  e.preventDefault();
+  const newF={
+    name:document.getElementById("fName").value.trim(),
+    birthday:document.getElementById("fBirthday").value.trim(),
+    favoriteColor:document.getElementById("fColor").value.trim(),
+    hobbies:document.getElementById("fHobbies").value.split(",").map(x=>x.trim()).filter(Boolean),
+    letter:document.getElementById("fLetter").value.trim()
+  };
+  const idx=friendsData.findIndex(f=>normalize(f.name)===normalize(newF.name));
+  if(idx>=0) friendsData[idx]=newF; else friendsData.push(newF);
+  save();
+  alert("Saved! Now search your name to see the letter.");
+  e.target.reset();
+};
 
-    function showLetterForName(name){
-      const friend = findFriendByName(name);
-      if (!friend){
-        output.innerHTML = `<h2>Oops —</h2><p>Sorry, I don’t have a letter for <strong>${escapeHtml(name)}</strong> yet. If you'd like, add them using the form on the right or edit <code>friendsData</code> in the code.</p><p class="muted">Tip: try first names or full names (search is case-insensitive).</p>`;
-        return;
-      }
-
-      // craft a warm, friendly, emotional letter in Vikrant's voice.
-      const autoLetter = friend.letter || generateLetterFromProfile(friend);
-      const html = `
-        <h2>To ${escapeHtml(friend.name)},</h2>
-        <div>${autoLetter.split('\n').map(line => `<p>${escapeHtml(line)}</p>`).join('')}</div>
-        <div class="signature">— Vikrant</div>
-      `;
-      output.innerHTML = html;
-    }
-
-    function generateLetterFromProfile(f){
-      const hobbies = (f.hobbies && f.hobbies.length) ? f.hobbies.join(', ') : 'the little things';
-      const birthdayLine = f.birthday ? `I still remember your birthday on ${f.birthday} — that day felt special.` : '';
-
-      // keep it concise but emotional — matches the requested style
-      return `Hello ${f.name},\n\n${birthdayLine ? birthdayLine + ' ' : ''}I wanted to write you a short note to say thank you. Your love for ${hobbies} and your bright ${f.favoriteColor || 'soul'} make ordinary days feel like something to celebrate. I carry our memories with me — the laughs, the quiet talks, the plans we made under dim lights.\n\nIf ever you doubt yourself, remember you're braver than you think and kinder than you know. Keep shining.\n\nWith warmth,\nVikrant`;
-    }
-
-    // escape helper
-    function escapeHtml(str){
-      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-    }
-
-    // search actions
-    searchBtn.addEventListener('click', ()=> showLetterForName(nameInput.value));
-    nameInput.addEventListener('keydown', (e)=>{ if (e.key === 'Enter') { e.preventDefault(); showLetterForName(nameInput.value); } });
-    clearBtn.addEventListener('click', ()=>{ nameInput.value=''; output.innerHTML = `<h2>Hello there —</h2><p class="muted">Type a name and your letter will appear here in an envelope-like card.</p>`});
-
-    // Add friend form
-    const addForm = document.getElementById('addForm');
-    addForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const name = document.getElementById('fName').value.trim();
-      if (!name) return alert('Please supply a name.');
-      const newFriend = {
-        name,
-        birthday: document.getElementById('fBirthday').value.trim(),
-        favoriteColor: document.getElementById('fColor').value.trim(),
-        hobbies: document.getElementById('fHobbies').value.split(',').map(x=>x.trim()).filter(Boolean),
-        letter: document.getElementById('fLetter').value.trim() || ''
-      };
-      // replace if same name exists
-      const existingIndex = friendsData.findIndex(f => normalizeName(f.name) === normalizeName(newFriend.name));
-      if (existingIndex >= 0){
-        if (!confirm(`${newFriend.name} already exists. Overwrite?`)) return;
-        friendsData[existingIndex] = newFriend;
-      } else {
-        friendsData.push(newFriend);
-      }
-      saveFriends();
-      renderFriendChips();
-      addForm.reset();
-      showLetterForName(newFriend.name);
-    });
-
-    document.getElementById('resetStorage').addEventListener('click', ()=>{
-      if (!confirm('This will clear saved friends and restore the original sample list. Continue?')) return;
-      friendsData = defaultFriends.slice();
-      saveFriends();
-      renderFriendChips();
-      output.innerHTML = `<h2>Reset complete</h2><p class="muted">Saved list restored to defaults.</p>`;
-    });
-
-    function saveFriends(){
-      try{ localStorage.setItem(storageKey, JSON.stringify(friendsData)); }
-      catch(e){ console.warn('could not save to localStorage',e) }
-    }
-
-    // initial render
-    renderFriendChips();
-
-    // Accessibility: focus search on load
-    nameInput.focus();
-
-    // expose a tiny helper in console for advanced manual editing
-    window.LettersFromVikrant = {
-      get friends(){return friendsData},
-      set friends(arr){ friendsData = arr; saveFriends(); renderFriendChips(); },
-      resetToDefaults(){ friendsData = defaultFriends.slice(); saveFriends(); renderFriendChips(); }
-    };
-  </script>
+document.getElementById("resetBtn").onclick=()=>{
+  if(confirm("Reset to default friends?")){
+    friendsData=defaultFriends.slice();
+    save();
+    alert("Reset done.");
+  }
+};
+</script>
 </body>
 </html>
+
